@@ -5,42 +5,44 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.join(__dirname, "/dist"),
-    filename: "index-bundle.js"
+    filename: "index-bundle.js",
   },
   module: {
     rules: [
       {
-        test:/\.(js|jsx)?$/,
+        test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: ["babel-loader"],
+        options: {
+          presets: ['@babel/preset-env',
+            '@babel/react', {
+              'plugins': ['@babel/plugin-proposal-class-properties']
+            }]
+        }
       },
-      // {
-      //   test: /\.css$/,
-      //   use: ["style-loader", "css-loader"]
-      // },
       {
         test: /\.(css|s[ac]ss)$/i,
         use: [
           // Creates `style` nodes from JS strings
-          'style-loader',
+          "style-loader",
           // Translates CSS into CommonJS
-          'css-loader',
+          "css-loader",
           // Compiles Sass to CSS
-          'sass-loader',
+          "sass-loader",
         ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          name: '[sha512:hash:base64:7].[ext]',
+          name: "[sha512:hash:base64:7].[ext]",
         },
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
-    })
-  ]
+      template: "./src/index.html",
+    }),
+  ],
 };
