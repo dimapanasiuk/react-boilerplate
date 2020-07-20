@@ -5,6 +5,8 @@ import "./appPerproc.scss";
 import Button from "./button/Button.jsx";
 
 class App extends Component {
+  state = {};
+
   render() {
     console.log();
     return (
