@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 import "./App.css";
 import "./appPerproc.scss";
 // import Logo from "./img/1.jpg";
@@ -8,7 +8,6 @@ class App extends Component {
   state = {};
 
   render() {
-    console.log();
     return (
       <div>
         <Button label="click me please" />

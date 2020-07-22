@@ -1,5 +1,7 @@
-import React from "react"
+import React from "react";
 // import './button.css';
+import { string } from 'prop-types';
+
 
 const Button = ({ label }) => {
   return (
@@ -7,6 +9,10 @@ const Button = ({ label }) => {
       {label}
     </div>
   );
+};
+
+Button.propTypes = {
+  label: string
 };
 
 export default Button;
