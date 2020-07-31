@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div>
         <Button label="click me please" />
-        <h1>My React App!</h1>
+        <h1>My React App3!</h1>
         {/* <img src={Logo} /> */}
       </div>
     );
