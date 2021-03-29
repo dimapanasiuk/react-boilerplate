@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import "./App.css";
 import "./appPerproc.scss";
-// import Logo from "./img/1.jpg";
+import "./app.css";
+
 import Button from "./button/Button.jsx";
 
 class App extends Component {
   state = {};
 
   render() {
+console.log('test',process.env);
     return (
       <div>
         <Button label="click me please" />
